@@ -29,54 +29,30 @@ public class MarsRoverMovementTests
         Assert.That(rover.Y, Is.EqualTo(endPosition));
     }
 
-    [Test]
-    public void MoveForwardWhenFacingEast()
+    [TestCase(1,2)]
+    [TestCase(2,3)]
+    public void MoveForwardWhenFacingEast(int startPosition, int endPosition)
     {
         Rover rover = new()
         {
-            X = 3,
+            X = startPosition,
             Direction = Direction.East
         };
         rover.MoveForward();
-        Assert.That(rover.X, Is.EqualTo(4));
+        Assert.That(rover.X, Is.EqualTo(endPosition));
     }
 
-    [Test]
-    public void MoveForwardTwiceWhenFacingEast()
+    [TestCase(3,2)]
+    [TestCase(2, 1)]
+    public void MoveForwardWhenFacingWest(int startPosition, int endPosition)
     {
         Rover rover = new()
         {
-            X = 3,
-            Direction = Direction.East
-        };
-        rover.MoveForward();
-        rover.MoveForward();
-        Assert.That(rover.X, Is.EqualTo(5));
-    }
-
-    [Test]
-    public void MoveForwardWhenFacingWest()
-    {
-        Rover rover = new()
-        {
-            X = 3,
+            X = startPosition,
             Direction = Direction.West
         };
         rover.MoveForward();
-        Assert.That(rover.X, Is.EqualTo(2));
-    }
-
-    [Test]
-    public void MoveForwardTwiceWhenFacingWest()
-    {
-        Rover rover = new()
-        {
-            X = 3,
-            Direction = Direction.West
-        };
-        rover.MoveForward();
-        rover.MoveForward();
-        Assert.That(rover.X, Is.EqualTo(1));
+        Assert.That(rover.X, Is.EqualTo(endPosition));
     }
 
     [Test]
