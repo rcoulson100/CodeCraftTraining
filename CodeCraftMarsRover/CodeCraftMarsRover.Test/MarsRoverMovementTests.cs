@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using CodeCraftMarsRover;
 
 namespace CodeCraftMarsRover.Test
 {
@@ -34,12 +35,24 @@ namespace CodeCraftMarsRover.Test
         {
             Rover rover = new()
             {
-                Y = 2,
+                Y = 3,
                 Direction = Direction.South
             };
             rover.MoveForward();
-            Assert.That(rover.Y, Is.EqualTo(1));
+            Assert.That(rover.Y, Is.EqualTo(2));
+        }
 
+        [Test]
+        public void MoveForwardTwiceWhenFacingSouth()
+        {
+            Rover rover = new()
+            {
+                Y = 3,
+                Direction = Direction.South
+            };
+            rover.MoveForward();
+            rover.MoveForward();
+            Assert.That(rover.Y, Is.EqualTo(1));
         }
     }
 }

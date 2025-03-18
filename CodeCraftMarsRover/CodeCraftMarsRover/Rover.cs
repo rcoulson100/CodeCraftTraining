@@ -1,20 +1,19 @@
 ﻿
 using System.ComponentModel;
 
-namespace CodeCraftMarsRover.Test;
+namespace CodeCraftMarsRover;
 
-internal class Rover
+public class Rover
 {
     public int Y { get; set; }
 
     public Direction Direction { get; set; }
 
-
-    internal void MoveForward()
+    public void MoveForward()
     {
         if (Direction == Direction.South)
         {
-            Y = 1;
+            Y--;
         }
         else
         {
