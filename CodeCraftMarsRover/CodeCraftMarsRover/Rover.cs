@@ -12,6 +12,18 @@ public class Rover
 
     public Direction Direction { get; set; }
 
+    public void MoveBackward()
+    {
+        if (Direction == Direction.North)
+        {
+            Y--;
+        }
+        else if (Direction == Direction.South)
+        {
+            Y++;
+        }
+        X = 1;
+    }
 
     public void MoveForward()
     {

@@ -1,7 +1,7 @@
 namespace CodeCraftMarsRover.Test;
 
 [TestFixture]
-public class Tests
+public class MarsRoverMovementTests
 {
     [Test]
     public void MoveForwardWhenFacingNorth()
@@ -101,5 +101,42 @@ public class Tests
         rover.MoveForward();
         rover.MoveForward();
         Assert.That(rover.X, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void MoveBackwardWhenFacingNorth()
+    {
+        Rover rover = new()
+        {
+            Y = 2,
+            Direction = Direction.North
+        };
+        rover.MoveBackward();
+
+        Assert.That(rover.Y, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void MoveBackwardWhenFacingEast()
+    {
+        Rover rover = new()
+        {
+            X = 2,
+            Direction = Direction.East
+        };
+        rover.MoveBackward();
+        Assert.That(rover.X, Is.EqualTo(1));
+    }
+
+    [Test]
+    public void MoveBackwardWhenFacingSouth()
+    {
+        Rover rover = new()
+        {
+            Y = 1,
+            Direction = Direction.South
+        };
+        rover.MoveBackward();
+        Assert.That(rover.Y, Is.EqualTo(2));
     }
 }
