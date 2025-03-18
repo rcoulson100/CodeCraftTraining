@@ -1,16 +1,32 @@
+using System.ComponentModel;
+
 namespace CodeCraftMarsRover.Test
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void MoveForwardWhenFacingNorth()
         {
+            Rover rover = new()
+            {
+                Y = 1,
+                Direction = Direction.North
+            };
+            rover.MoveForward();
+            Assert.That(rover.Y, Is.EqualTo(2));
         }
 
         [Test]
-        public void Test1()
+        public void MoveForwardWhenFacingSouth()
         {
-            Assert.Pass();
+            Rover rover = new()
+            {
+                Y = 2,
+                Direction = Direction.South
+            };
+            rover.MoveForward();
+            Assert.That(rover.Y, Is.EqualTo(1));
+
         }
     }
 }
