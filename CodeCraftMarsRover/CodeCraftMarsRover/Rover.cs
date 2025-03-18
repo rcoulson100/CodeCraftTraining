@@ -31,4 +31,9 @@ public class Rover
             Y++;
         }
     }
+
+    public void TurnRight()
+    {
+        Direction = Direction.East;
+    }
 }
