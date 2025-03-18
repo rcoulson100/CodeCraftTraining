@@ -22,7 +22,14 @@ public class Rover
         {
             Y++;
         }
-        X = 1;
+        else if (Direction == Direction.West)
+        {
+            X++;
+        }
+        else
+        {
+            X--;
+        }
     }
 
     public void MoveForward()
