@@ -34,6 +34,13 @@ public class Rover
 
     public void TurnRight()
     {
-        Direction = Direction.East;
+        if (Direction == Direction.North)
+        {
+            Direction = Direction.East;
+        }
+        else
+        {
+            Direction = Direction.South;
+        }
     }
 }

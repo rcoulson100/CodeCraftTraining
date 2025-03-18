@@ -13,4 +13,16 @@ public class MarsRoverTurningTests
         rover.TurnRight();
         Assert.That(rover.Direction, Is.EqualTo(Direction.East));
     }
+
+    [Test]
+    public void TurnRightWhenFacingEast()
+    {
+        Rover rover = new()
+        {
+            Direction = Direction.East
+        };
+        rover.TurnRight();
+        Assert.That(rover.Direction, Is.EqualTo(Direction.South));
+    }
+
 }
