@@ -33,6 +33,26 @@ public class Rover
         }
     }
 
+    public void TurnLeft()
+    {
+        if (Direction == Direction.North)
+        {
+            Direction = Direction.West;
+        }
+        else if (Direction == Direction.West)
+        {
+            Direction = Direction.South;
+        }
+        else if (Direction == Direction.South)
+        {
+            Direction = Direction.East;
+        }
+        else
+        {
+            Direction = Direction.North;
+        }
+    }
+
     public void TurnRight()
     {
         if (Direction == Direction.North)
