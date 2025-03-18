@@ -7,7 +7,7 @@ public class MarsRoverMovementTests
     [TestCase(2, 3, Direction.North)]
     [TestCase(2, 1, Direction.South)]
     [TestCase(3, 2, Direction.South)]
-    public void MoveForwardWhenFacingNorth(int startPosition, int endPosition, Direction direction)
+    public void MoveForwardAlongYAxis(int startPosition, int endPosition, Direction direction)
     {
         Rover rover = new()
         {
@@ -22,7 +22,7 @@ public class MarsRoverMovementTests
     [TestCase(2, 3, Direction.East)]
     [TestCase(3, 2, Direction.West)]
     [TestCase(2, 1, Direction.West)]
-    public void MoveForwardWhenFacingEast(int startPosition, int endPosition, Direction direction)
+    public void MoveForwardAlongXAxis(int startPosition, int endPosition, Direction direction)
     {
         Rover rover = new()
         {
@@ -37,7 +37,7 @@ public class MarsRoverMovementTests
     [TestCase(3, 2, Direction.North)]
     [TestCase(1, 2, Direction.South)]
     [TestCase(2, 3, Direction.South)]
-    public void MoveBackwardWhenFacingNorth(int startPosition, int endPosition, Direction direction)
+    public void MoveBackwardAlongYAxis(int startPosition, int endPosition, Direction direction)
     {
         Rover rover = new()
         {
@@ -53,7 +53,7 @@ public class MarsRoverMovementTests
     [TestCase(3, 2, Direction.East)]
     [TestCase(1, 2, Direction.West)]
     [TestCase(2, 3, Direction.West)]
-    public void MoveBackwardWhenFacingEast(int startPosition, int endPosition, Direction direction)
+    public void MoveBackwardAlongXAxis(int startPosition, int endPosition, Direction direction)
     {
         Rover rover = new()
         {
