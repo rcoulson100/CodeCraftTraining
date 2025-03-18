@@ -3,54 +3,30 @@ namespace CodeCraftMarsRover.Test;
 [TestFixture]
 public class MarsRoverMovementTests
 {
-    [Test]
-    public void MoveForwardWhenFacingNorth()
+    [TestCase(1, 2)]
+    [TestCase(2, 3)]
+    public void MoveForwardWhenFacingNorth(int startPosition, int endPosition)
     {
         Rover rover = new()
         {
-            Y = 1,
+            Y = startPosition,
             Direction = Direction.North
         };
         rover.MoveForward();
-        Assert.That(rover.Y, Is.EqualTo(2));
+        Assert.That(rover.Y, Is.EqualTo(endPosition));
     }
 
-    [Test]
-    public void MoveForwardTwiceWhenFacingNorth()
+    [TestCase(2, 1)]
+    [TestCase(3, 2)]
+    public void MoveForwardWhenFacingSouth(int startPosition, int endPosition)
     {
         Rover rover = new()
         {
-            Y = 1,
-            Direction = Direction.North
-        };
-        rover.MoveForward();
-        rover.MoveForward();
-        Assert.That(rover.Y, Is.EqualTo(3));
-    }
-
-    [Test]
-    public void MoveForwardWhenFacingSouth()
-    {
-        Rover rover = new()
-        {
-            Y = 3,
+            Y = startPosition,
             Direction = Direction.South
         };
         rover.MoveForward();
-        Assert.That(rover.Y, Is.EqualTo(2));
-    }
-
-    [Test]
-    public void MoveForwardTwiceWhenFacingSouth()
-    {
-        Rover rover = new()
-        {
-            Y = 3,
-            Direction = Direction.South
-        };
-        rover.MoveForward();
-        rover.MoveForward();
-        Assert.That(rover.Y, Is.EqualTo(1));
+        Assert.That(rover.Y, Is.EqualTo(endPosition));
     }
 
     [Test]
