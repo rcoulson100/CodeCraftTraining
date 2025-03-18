@@ -17,6 +17,19 @@ namespace CodeCraftMarsRover.Test
         }
 
         [Test]
+        public void MoveForwardTwiceWhenFacingNorth()
+        {
+            Rover rover = new()
+            {
+                Y = 1,
+                Direction = Direction.North
+            };
+            rover.MoveForward();
+            rover.MoveForward();
+            Assert.That(rover.Y, Is.EqualTo(3));
+        }
+
+        [Test]
         public void MoveForwardWhenFacingSouth()
         {
             Rover rover = new()

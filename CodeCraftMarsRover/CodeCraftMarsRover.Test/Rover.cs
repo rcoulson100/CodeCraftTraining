@@ -18,7 +18,7 @@ internal class Rover
         }
         else
         {
-            Y = 2;
+            Y++;
         }
     }
 }
