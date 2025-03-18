@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel;
+using System.ComponentModel.Design;
 
 namespace CodeCraftMarsRover;
 
@@ -38,9 +39,18 @@ public class Rover
         {
             Direction = Direction.East;
         }
-        else
+        else if (Direction == Direction.East)
         {
             Direction = Direction.South;
         }
+        else if (Direction == Direction.South)
+        {
+            Direction = Direction.West;
+        }
+        else
+        {
+            Direction = Direction.North;
+        }
+
     }
 }
